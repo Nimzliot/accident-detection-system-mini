@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(125, 211, 252, 0.2), transparent 30%),
+    radial-gradient(circle at right, rgba(56, 189, 248, 0.16), transparent 28%),
+    radial-gradient(circle at bottom, rgba(29, 78, 216, 0.14), transparent 30%),
+    linear-gradient(180deg, #06101c 0%, #0a1b30 42%, #040b15 100%);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.metric-card-glow {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  animation: metricGlowPulse 1.8s ease-in-out infinite;
+}
+
+.metric-card-glow::after {
+  content: "";
+  position: absolute;
+  inset: -28%;
+  z-index: -1;
+  border-radius: 32px;
+  opacity: 0.58;
+  filter: blur(42px);
+}
+
+.metric-card-glow-minor {
+  border-color: rgba(125, 211, 252, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(125, 211, 252, 0.24),
+    0 0 28px rgba(125, 211, 252, 0.4),
+    0 0 52px rgba(125, 211, 252, 0.24),
+    0 24px 80px rgba(5, 11, 20, 0.48);
+}
+
+.metric-card-glow-minor::after {
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.72) 0%, rgba(125, 211, 252, 0.08) 48%, rgba(125, 211, 252, 0) 74%);
+}
+
+.metric-card-glow-medium {
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.24),
+    0 0 28px rgba(56, 189, 248, 0.4),
+    0 0 52px rgba(56, 189, 248, 0.24),
+    0 24px 80px rgba(5, 11, 20, 0.48);
+}
+
+.metric-card-glow-medium::after {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.72) 0%, rgba(56, 189, 248, 0.08) 48%, rgba(56, 189, 248, 0) 74%);
+}
+
+.metric-card-glow-severe {
+  border-color: rgba(59, 130, 246, 0.58);
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.26),
+    0 0 30px rgba(59, 130, 246, 0.42),
+    0 0 56px rgba(59, 130, 246, 0.26),
+    0 24px 80px rgba(5, 11, 20, 0.48);
+}
+
+.metric-card-glow-severe::after {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.76) 0%, rgba(59, 130, 246, 0.1) 48%, rgba(59, 130, 246, 0) 74%);
+}
+
+.metric-card-flash {
+  animation: metricGlowBurst 1.4s ease-out;
+}
+
+.metric-card-flash::after {
+  opacity: 0.92;
+  filter: blur(56px);
+}
+
+.metric-card-flash-minor {
+  box-shadow:
+    0 0 0 1px rgba(125, 211, 252, 0.34),
+    0 0 42px rgba(125, 211, 252, 0.72),
+    0 0 88px rgba(125, 211, 252, 0.4),
+    0 24px 80px rgba(5, 11, 20, 0.52);
+}
+
+.metric-card-flash-medium {
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.34),
+    0 0 42px rgba(56, 189, 248, 0.72),
+    0 0 88px rgba(56, 189, 248, 0.4),
+    0 24px 80px rgba(5, 11, 20, 0.52);
+}
+
+.metric-card-flash-severe {
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.36),
+    0 0 46px rgba(59, 130, 246, 0.76),
+    0 0 94px rgba(59, 130, 246, 0.44),
+    0 24px 80px rgba(5, 11, 20, 0.52);
+}
+
+@keyframes metricGlowPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    filter: brightness(1.04);
+  }
+
+  50% {
+    transform: translateY(-3px);
+    filter: brightness(1.18);
+  }
+}
+
+@keyframes metricGlowBurst {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: brightness(1.08);
+  }
+
+  20% {
+    transform: translateY(-4px) scale(1.02);
+    filter: brightness(1.4);
+  }
+
+  60% {
+    transform: translateY(-2px) scale(1.01);
+    filter: brightness(1.22);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    filter: brightness(1.04);
+  }
+}
+
+.leaflet-container {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #0d1728;
+}
+
+.leaflet-control-attribution {
+  background: rgba(13, 23, 40, 0.9) !important;
+  color: #cbd5e1 !important;
+}
