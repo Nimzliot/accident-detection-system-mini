@@ -1,6 +1,6 @@
-# Smart Accident Detection System With Web Dashboard
+# Smart Accident Detection System Mini Project
 
-This repository contains a final-year engineering IoT prototype for detecting vehicle accidents, tracking live device location, and monitoring events through a realtime web dashboard.
+This repository contains a final-year engineering IoT mini project for detecting vehicle accidents, tracking live device location, and monitoring events through a realtime web dashboard.
 
 ## Modules
 
