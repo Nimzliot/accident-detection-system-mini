@@ -12,7 +12,7 @@
 // https://your-backend-domain/api
 const char* WIFI_SSID = "ad";
 const char* WIFI_PASSWORD = "ad123456";
-const char* BACKEND_BASE_URL = "https://accident-detection-system-nawh.onrender.com/api";
+const char* BACKEND_BASE_URL = "/api";
 const double DEFAULT_LATITUDE = 12.870111834380207;
 const double DEFAULT_LONGITUDE = 80.21845938650789;
 const char* DEVICE_ID = "vehicle_01";
